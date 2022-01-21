@@ -9,4 +9,4 @@ groupe numéro : 27
 
 URL du projet github : https://github.com/sofiane252/S2sae4_Argjentin_Sofiane_Ayoub.git
 
-URL du site pythonanywhere :
+URL du site pythonanywhere : sofiane.mysql.pythonanywhere-services.com
