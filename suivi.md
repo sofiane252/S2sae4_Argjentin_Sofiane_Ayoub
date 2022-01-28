@@ -7,3 +7,5 @@ Vendredi 21 janvier :
 
 Mardi 25 janvier :
   - Maxence à rejoins notre groupe.
+  - Nous avons réglé ensemble le pythonanywhere, ensuite nous avons fait le login et le sign up.
+  - nous avons avancé sur le sql .
