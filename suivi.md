@@ -9,3 +9,7 @@ Mardi 25 janvier :
   - Maxence à rejoins notre groupe.
   - Nous avons réglé ensemble le pythonanywhere, ensuite nous avons fait le login et le sign up.
   - nous avons avancé sur le sql .
+
+Vendredi 28 janvier :
+  - Sofiane et Argjentin ont continués le pycharm pour réaliser la vue sur le panier.
+  - Ayoub et maxence sont absents.
