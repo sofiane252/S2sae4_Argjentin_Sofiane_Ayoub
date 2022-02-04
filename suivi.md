@@ -13,3 +13,8 @@ Mardi 25 janvier :
 Vendredi 28 janvier :
   - Sofiane et Argjentin ont continués le pycharm pour réaliser la vue sur le panier.
   - Ayoub et maxence sont absents.
+Jeudi 3 février :
+  - Ayoub absent -> covid.
+  - Sofiane, Maxenxe et Argjentin ont réalisés l'affichage des voitures dans le panier du client.
+Vendredi 4 février :
+  - Ayoub, Sofiane ont réalisés la add_article dans le panier du client tandis que maxence et argjentin avance sur la partie admin comme le add, delete et edit.
