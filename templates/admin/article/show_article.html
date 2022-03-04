@@ -1,0 +1,317 @@
+{% extends 'admin/layout_admin.html' %}
+
+{% block title %}
+    <title>Afficher les voitures</title>
+{% endblock %}
+
+{% block body %}
+<h3>Voitures</h3>
+<a  class="btn btn-outline-success" href="/admin/article/add">Ajouter une voiture</a>
+<br><br>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>nom</th><th>id</th><th>type article (id)</th><th>prix</th><th>stock</th><th>description</th><th>image</th><th>opération</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+           <tr>
+                  <td>arrosoir bleu</td>
+                  <td>9</td>
+                  <td><span style="color: red">Arrosage</span> (4)</td>
+                  <td>  13.00 €</td>
+                  <td>50608760</td>
+                  <td>None</td>
+
+                  <td>arrosoir1.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/arrosoir1.jpg"  alt="image  de arrosoir bleu" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=9" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/9">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>arrosoir griotte</td>
+                  <td>10</td>
+                  <td><span style="color: red">Arrosage</span> (4)</td>
+                  <td>  10.00 €</td>
+                  <td>45606</td>
+                  <td>None</td>
+
+                  <td>arrosoir2.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/arrosoir2.jpg"  alt="image  de arrosoir griotte" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=10" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/10">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Boite de rangement</td>
+                  <td>3</td>
+                  <td><span style="color: red">Fourniture de bureau</span> (1)</td>
+                  <td>  3.00 €</td>
+                  <td>2147483647</td>
+                  <td>None</td>
+
+                  <td>boites.jpeg
+
+                            <img style="width:40px;height:40px"  src="/static/images/boites.jpeg"  alt="image  de Boite de rangement" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=3" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/3">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Chaise</td>
+                  <td>4</td>
+                  <td><span style="color: red">Mobilier</span> (2)</td>
+                  <td>  20.00 €</td>
+                  <td>4560604</td>
+                  <td>None</td>
+
+                  <td>chaise.jpeg
+
+                            <img style="width:40px;height:40px"  src="/static/images/chaise.jpeg"  alt="image  de Chaise" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=4" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/4">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Enveloppes (50p)</td>
+                  <td>1</td>
+                  <td><span style="color: red">Fourniture de bureau</span> (1)</td>
+                  <td>  2.00 €</td>
+                  <td>65406450</td>
+                  <td>None</td>
+
+                  <td>None
+
+                            <img style="width:40px;height:40px"  src="/static/images/None"  alt="image  de Enveloppes (50p)" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=1" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/1">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>marteau menuisier</td>
+                  <td>13</td>
+                  <td><span style="color: red">Outils</span> (5)</td>
+                  <td>  10.00 €</td>
+                  <td>45604560</td>
+                  <td>None</td>
+
+                  <td>marteau.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/marteau.jpg"  alt="image  de marteau menuisier" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=13" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/13">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>perceuse</td>
+                  <td>15</td>
+                  <td><span style="color: red">Outils</span> (5)</td>
+                  <td>  160.00 €</td>
+                  <td>80645660</td>
+                  <td>Sert a faire des trous</td>
+
+                  <td>perceuse.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/perceuse.jpg"  alt="image  de perceuse" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=15" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/15">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>pince multiprise</td>
+                  <td>14</td>
+                  <td><span style="color: red">Outils</span> (5)</td>
+                  <td>  22.00 €</td>
+                  <td>4604560</td>
+                  <td>None</td>
+
+                  <td>pinceMultiprise.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/pinceMultiprise.jpg"  alt="image  de pince multiprise" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=14" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/14">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Salon de Jardin alu</td>
+                  <td>6</td>
+                  <td><span style="color: red">Mobilier Jardin</span> (3)</td>
+                  <td>  140.00 €</td>
+                  <td>465045</td>
+                  <td>None</td>
+
+                  <td>salonJardin2.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/salonJardin2.jpg"  alt="image  de Salon de Jardin alu" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=6" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/6">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Set Table + 4 bancs</td>
+                  <td>8</td>
+                  <td><span style="color: red">Mobilier Jardin</span> (3)</td>
+                  <td>  279.00 €</td>
+                  <td>45604560</td>
+                  <td>None</td>
+
+                  <td>setTableChaises.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/setTableChaises.jpg"  alt="image  de Set Table + 4 bancs" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=8" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/8">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Stylo noir</td>
+                  <td>2</td>
+                  <td><span style="color: red">Fourniture de bureau</span> (1)</td>
+                  <td>  2.00 €</td>
+                  <td>45604560</td>
+                  <td>None</td>
+
+                  <td>stylo.jpeg
+
+                            <img style="width:40px;height:40px"  src="/static/images/stylo.jpeg"  alt="image  de Stylo noir" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=2" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/2">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Table+6 fauteuilles de Jardin</td>
+                  <td>7</td>
+                  <td><span style="color: red">Divers</span> (6)</td>
+                  <td>  1,500.00 €</td>
+                  <td>46504560</td>
+                  <td>c&#39;est une arnaque</td>
+
+                  <td>tableFauteuilsJardin1.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/tableFauteuilsJardin1.jpg"  alt="image  de Table+6 fauteuilles de Jardin" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=7" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/7">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>Tables</td>
+                  <td>5</td>
+                  <td><span style="color: red">Mobilier</span> (2)</td>
+                  <td>  200.00 €</td>
+                  <td>640604650</td>
+                  <td>None</td>
+
+                  <td>table.jpeg
+
+                            <img style="width:40px;height:40px"  src="/static/images/table.jpeg"  alt="image  de Tables" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=5" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/5">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>tournevis</td>
+                  <td>12</td>
+                  <td><span style="color: red">Outils</span> (5)</td>
+                  <td>  7.00 €</td>
+                  <td>456045064</td>
+                  <td>None</td>
+
+                  <td>lotTourneVis.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/lotTourneVis.jpg"  alt="image  de tournevis" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=12" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/12">editer</a>
+                  </td>
+           </tr>
+
+           <tr>
+                  <td>tuyau arrosage</td>
+                  <td>11</td>
+                  <td><span style="color: red">Arrosage</span> (4)</td>
+                  <td>  33.00 €</td>
+                  <td>456006460</td>
+                  <td>None</td>
+
+                  <td>tuyauArrosage1.jpg
+
+                            <img style="width:40px;height:40px"  src="/static/images/tuyauArrosage1.jpg"  alt="image  de tuyau arrosage" >
+
+                  </td>
+                  <td>
+                     <a  class="btn btn-outline-danger" href="/admin/article/delete?id=11" onclick="return confirm('Are you sure?')" >supprimer</a>
+                      <a  class="btn btn-outline-warning" href="/admin/article/edit/11">editer</a>
+                  </td>
+           </tr>
+
+
+    </tbody>
+</table>
+
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/assets/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="/static/assets/js/popper.min.js" ></script>
+    <script src="/static/assets/js/bootstrap.js" ></script>
+{% endblock %}

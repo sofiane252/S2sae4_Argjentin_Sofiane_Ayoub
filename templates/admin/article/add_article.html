@@ -1,0 +1,71 @@
+{% extends 'admin/layout_admin.html' %}
+
+{% block title %}
+    <title>Ajouter une voiture</title>
+{% endblock %}
+
+{% block body %}
+  <h2>Ajout d'une voiture</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+
+  <form method="post" action="/admin/article/add" >
+    <fieldset>
+        <legend> Créer une voiture</legend>
+<div class="mb-3">
+        <input id="id" type="hidden" name="id_voiture" size="20" value="" placeholder="Saisir l'id de la voiture">
+        <label class="form-label" for="nom">Nom</label>
+        <input  class="form-control" id="nom_voiture" type="text" name="nom" size="18" value="" placeholder="Saisir le nom de la voiture" class="form-control" >
+</div>
+<div class="mb-3">
+
+        <label class="form-label" for="type_article_id">Type de voiture</label><br>
+        <select class="form-select" name="type_article_id" required>
+            <option value="">Sélectionner un type de voiture</option>
+
+            <option value="4"> Berline </option>
+
+            <option value="6"> Break </option>
+
+            <option value="1"> Coupé </option>
+
+            <option value="2"> SUV </option>
+
+            <option value="3"> Hybride </option>
+
+            <option value="5"> Pick-up </option>
+
+            <option value="7"> Sportive </option>
+
+        </select>
+</div>
+<div class="mb-3">
+        <label class="form-label" for="prix">Prix de la voiture</label>
+        <input  class="form-control" id="prix_unit_voiture" type="number" step="0.01"  required name="prix" size="18" value="1" placeholder="Saisir le prix de la voiture">
+</div>
+<div class="mb-3">
+        <label class="form-label" for="stock">Stock</label>
+        <input  class="form-control" id="stock_voiture" type="number"  required name="stock" size="18" value="10" placeholder="Saisir le stock">
+</div>
+<div class="mb-3">
+        <label class="form-label" for="description">Description</label>
+        <input  class="form-control" id="description" type="text" name="description" size="18" value="" placeholder="Saisir la description">
+</div>
+<div class="mb-3">
+        <label class="form-label" for="image">Image</label>
+        <input  class="form-control" id="image" type="file" name="image" size="18" value="" placeholder="Saisir le nom de l'image de la voiture">
+</div>
+
+    <div class="col-12">
+    <button class="btn btn-primary" type="submit">Valider</button>
+    </div>
+    </fieldset>
+  </form>
+
+</div>
+
+
+
+{% endblock %}
