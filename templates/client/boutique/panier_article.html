@@ -104,7 +104,13 @@
                                              </button>
 
                                             <div class="input-group input-group-sm" style="width: 4rem !important;">
-                                                <input type="number" id="input-{{ article.id }}" step="1" min="0" max="{{ article.stock }}" class="form-control" style="width: 4rem !important;" value="0" name="quantite">
+                                                {% if article.stock is defined %}
+                                                    {% if article.stock > 0 %}
+                                                        <input type="number" id="input-{{ article.id }}" step="1" min="1" max="{{ article.stock }}" class="form-control" style="width: 4rem !important;" value="1" name="quantite">
+                                                    {% else %}
+                                                        <input type="number" id="input-{{ article.id }}" step="1" min="0" max="{{ article.stock }}" class="form-control" style="width: 4rem !important;" value="0" name="quantite">
+                                                    {% endif %}
+                                                {% endif %}
                                             </div>
                                         </form>
                                 </div>
