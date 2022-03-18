@@ -1,0 +1,52 @@
+{% extends 'admin/layout_admin.html' %}
+
+{% block title %}
+    <title>afficher les articles</title>
+{% endblock %}
+
+{% block body %}
+<h3>articles</h3>
+<a  class="btn btn-outline-success" href="/admin/article/add">ajouter un article</a>
+<br><br>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id voiture</th><th>Marque</th><th>Modèle</th><th>Prix unité voiture</th><th>Nombre de place</th><th>Nombre de porte</th><th>description</th><th>Image</th><th>Type voiture</th><th>Carburant</th><th>Couleur</th><th>Stock</th><th>opération</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if articles | length >= 1 %}
+        {% for ligne in articles %}
+           <tr>
+                  <td>{{ ligne.id_voiture }}</td>
+                  <td>{{ ligne.libelle_marque }}(<span class="red">{{ ligne.id_marque }}</span>)</td>
+                  <td>{{ ligne.libelle_modele }}(<span class="red">{{ ligne.id_modele }}</span>)</td>
+                  <td>{{ ligne.prix_unit_voiture }}</td>
+                  <td>{{ ligne.nombre_de_places }}(<span class="red">{{ ligne.id_nbr_places}}</span>)</td>
+                  <td>{{ ligne.nombre_de_portes }}(<span class="red">{{ ligne.id_nbr_portes }}</span>)</td>
+                  <td>{{ ligne.description }}</td>
+                  <td><img src="{{ url_for('static', filename='images') }}/{{ ligne.image_voiture }}" width="150" /> </td>
+                  <td>{{ ligne.libelle_type_voiture }}(<span class="red">{{ ligne.id_type_voiture }}</span>)</td>
+                  <td>{{ ligne.libelle_carburant }}(<span class="red">{{ ligne.id_carburant }}</span>)</td>
+                  <td>{{ ligne.libelle_couleur }}(<span class="red">{{ ligne.id_couleur }}</span>)</td>
+                  <td>{{ ligne.stock_voiture }}</td>
+
+                  <td>
+                      <a href="/admin/article/edit/{{ ligne.id_voiture }}">editer</a>&nbsp;
+
+                      <a href="/admin/article/delete?id_voiture={{ ligne.id_voiture }}" onclick="return confirm('Are you sure?')" >supprimer</a>
+                  </td>
+           </tr>
+        {% endfor %}
+    {% else %}
+            <tr>
+                  <td>
+                      pas de voiture
+                  </td>
+           </tr>
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

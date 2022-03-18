@@ -1,0 +1,68 @@
+{% extends 'admin/layout_admin.html' %}
+
+{% block title %}
+    <title>ajouter un article</title>
+{% endblock %}
+
+{% block body %}
+  <h2>ajout d'un article</h2>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method="post" action="/admin/article/add" {#action="{{ url_for('valid_add_article') }}#} >
+    <fieldset>
+        <legend> Créer un article</legend>
+        <label for="prix_unit_voiture">Prix de la voiture :</label><br>
+        <input id="prix_unit_voiture" type="number" name="prix_unit_voiture" size="18" value="" class="input" placeholder="Saisir le prix de la voiture"><br><br>
+        <label for="description">Description :</label><br>
+        <input id="description" type="text" name="description" size="50" value="" class="input" placeholder="Saisir une description"><br><br>
+        <label for="image_voiture">Image :</label><br>
+        <input id="image_voiture" type="text" name="image_voiture" size="18" value="" class="input" placeholder="Insérer une image"><br><br>
+        <select name="id_type_voiture" required>
+            <option value="">Sélectionner un type de voiture</option>
+            {% for type in types_articles %}
+                <option value="{{ type.id_type_voiture }}"> {{ type.libelle_type_voiture }} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_carburant" required>
+            <option value="">Sélectionner un carburant</option>
+            {% for type in carburants %}
+                <option value="{{ type.id_carburant }}"> {{ type.libelle_carburant }} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_nbr_places" required>
+            <option value="">Sélectionner le nombre de places</option>
+            {% for type in nbr_places %}
+                <option value="{{ type.id_nbr_places }}"> {{ type.nombre_de_places }} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_nbr_portes" required>
+            <option value="">Sélectionner le nombre de portes</option>
+            {% for type in nbr_portes %}
+                <option value="{{ type.id_nbr_portes }}"> {{ type.nombre_de_portes }} </option>
+            {% endfor %}
+        </select><br><br>
+            <select name="id_modele" required>
+            <option value="">Sélectionner le modele</option>
+            {% for type in modeles %}
+                <option value="{{ type.id_modele }}"> {{ type.libelle_modele}} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_couleur" required>
+            <option value="">Sélectionner une couleur</option>
+            {% for type in couleurs %}
+                <option value="{{ type.id_couleur }}"> {{ type.libelle_couleur }} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_marque" required>
+            <option value="">Sélectionner une marque</option>
+            {% for type in marques %}
+                <option value="{{ type.id_marque }}"> {{ type.libelle_marque }} </option>
+            {% endfor %}
+        </select><br><br>
+        <label for="stock_voiture">Stock :</label><br>
+        <input id="stock_voiture" type="number" name="stock_voiture" size="18" value="" class="input" placeholder="Saisir le stock"><br><br>
+        <input type="submit" value="Creer" name="Valider" >
+    </fieldset>
+  </form>
+{% endblock %}

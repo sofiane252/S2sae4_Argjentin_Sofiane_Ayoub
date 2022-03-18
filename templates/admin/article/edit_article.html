@@ -1,0 +1,75 @@
+{% extends 'admin/layout_admin.html' %}
+{% block title %}
+    <title>modifier un article</title>
+{% endblock %}
+
+{% block body %}
+{#  <h2>modifier d'un article</h2>#}
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+  <form method="post" action="/admin/article/edit" {#action="{{ url_for('valid_edit_article') }}#}">
+    <fieldset>
+        <legend> Modifier une voiture</legend>
+        <input type="hidden" name="id_voiture" size="18" value="{{ articles.id_voiture }}" id="id_voiture">
+        <label for="prix_unit_voiture">Prix de la voiture :</label><br>
+        <input type="number" name="prix_unit_voiture" size="18" value="{{ articles.prix_unit_voiture }}" id="prix_unit_voiture"><br><br>
+        <label for="description">Description :</label><br>
+        <input type="text" name="description" size="50" value="{{ articles.description }}" id="description"><br><br>
+        <label for="image_voiture">Image :</label><br>
+        <input type="text" name="image_voiture" size="18" value="{{ articles.image_voiture }}" id="image_voiture"><br><br>
+        <select name="id_type_voiture" required>
+            {% for type in types_articles %}
+                <option value="{{ type.id_type_voiture }}"
+                    {% if type.id_type_voiture is defined and type.id_type_voiture == articles.id_type_voiture %}selected{% endif %}
+            > {{ type.libelle_type_voiture }} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_carburant" required>
+            {% for type in carburants %}
+                <option value="{{ type.id_carburant }}"
+                    {% if type.id_carburant is defined and type.id_carburant == articles.id_carburant %}selected{% endif %}
+            > {{ type.libelle_carburant }} </option>
+            {% endfor %}
+        </select><br><br>
+            <select name="id_nbr_places" required>
+            {% for type in nbr_places %}
+                <option value="{{ type.id_nbr_places }}"
+                    {% if type.id_nbr_places is defined and type.id_nbr_places == articles.id_nbr_places %}selected{% endif %}
+            > {{ type.nombre_de_places }} </option>
+            {% endfor %}
+        </select><br><br>
+            <select name="id_nbr_portes" required>
+            {% for type in nbr_portes %}
+                <option value="{{ type.id_nbr_portes }}"
+                    {% if type.id_nbr_portes is defined and type.id_nbr_portes == articles.id_nbr_portes %}selected{% endif %}
+            > {{ type.nombre_de_portes }} </option>
+            {% endfor %}
+        </select><br><br>
+            <select name="id_modele" required>
+            {% for type in modeles %}
+                <option value="{{ type.id_modele }}"
+                    {% if type.id_modele is defined and type.id_modele == articles.id_modele %}selected{% endif %}
+            > {{ type.libelle_modele }} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_couleur" required>
+            {% for type in couleurs %}
+                <option value="{{ type.id_couleur }}"
+                    {% if type.id_couleur is defined and type.id_couleur == articles.id_couleur %}selected{% endif %}
+            > {{ type.libelle_couleur }} </option>
+            {% endfor %}
+        </select><br><br>
+        <select name="id_marque" required>
+            {% for type in marques %}
+                <option value="{{ type.id_marque }}"
+                    {% if type.id_marque is defined and type.id_marque == articles.id_marque %}selected{% endif %}
+            > {{ type.libelle_marque }} </option>
+            {% endfor %}
+        </select><br><br>
+        <label for="stock_voiture">Stock :</label><br>
+        <input type="number" name="stock_voiture" size="18" value="{{ articles.stock_voiture }}" id="stock_voiture"><br><br>
+        <input type="submit" value="Modifier" name="Modifier" >
+    </fieldset>
+  </form>
+{% endblock %}
